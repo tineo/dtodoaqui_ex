@@ -38,10 +38,10 @@ defmodule DtodoaquiWeb.Router do
     post "/sign_in", UserController, :sign_in
   end
 
-  scope "/api/v1", MyApiWeb do
+  scope "/api", DtodoaquiWeb do
     pipe_through [:api, :jwt_authenticated]
 
     get "/my_user", UserController, :show
   end
-  
+
 end
