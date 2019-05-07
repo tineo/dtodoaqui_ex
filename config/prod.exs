@@ -10,13 +10,9 @@ use Mix.Config
 # which you should run after static files are built and
 # before starting your production server.
 config :dtodoaqui, DtodoaquiWeb.Endpoint,
-<<<<<<< HEAD
+
   http: [:inet6, port: System.get_env("PORT") || 4000],
   url: [host: "dtodoaqui.pw", port: 80],
-=======
-  http: [:inet6, port: System.get_env("PORT") || 80],
-  url: [host: "35.198.26.118", port: 80],
->>>>>>> 24977ff7c4f4dfdc0431f3fbee10b1af7509bc62
   cache_static_manifest: "priv/static/cache_manifest.json"
 
 # Do not print debug messages in production
