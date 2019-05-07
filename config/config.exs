@@ -12,7 +12,7 @@ config :dtodoaqui,
 
 # Configures the endpoint
 config :dtodoaqui, DtodoaquiWeb.Endpoint,
-  url: [host: "localhost"],
+  url: [host: "0.0.0.0"],
   secret_key_base: "466vwXj5D505neh33WNKFuG4UEAklQ9+Wf7XNda0VFfmYJobJOVG6tDmqtn7XNB7",
   render_errors: [view: DtodoaquiWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: Dtodoaqui.PubSub, adapter: Phoenix.PubSub.PG2]
