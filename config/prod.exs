@@ -11,7 +11,7 @@ use Mix.Config
 # before starting your production server.
 config :dtodoaqui, DtodoaquiWeb.Endpoint,
   http: [:inet6, port: System.get_env("PORT") || 4000],
-  url: [host: "35.198.26.118", port: 80],
+  url: [host: "dtodoaqui.pw", port: 80],
   cache_static_manifest: "priv/static/cache_manifest.json"
 
 # Do not print debug messages in production
