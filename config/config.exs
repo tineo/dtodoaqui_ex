@@ -31,5 +31,13 @@ import_config "#{Mix.env()}.exs"
 
 
 config :dtodoaqui, Dtodoaqui.Guardian,
-       issuer: "dtodoaqui",
-       secret_key: "2gSG40Pws6bjCTBnVegUsx2DXB3rm9KD/6ebCsbCSD/tre2OI/f4nMxR0teWVYjs"
+  issuer: "dtodoaqui",
+  secret_key: "2gSG40Pws6bjCTBnVegUsx2DXB3rm9KD/6ebCsbCSD/tre2OI/f4nMxR0teWVYjs"
+
+config :dtodoaqui, :phoenix_swagger,
+  swagger_files: %{
+    "priv/static/swagger.json" => [
+      router: DtodoaquiWeb.Router,     # phoenix routes will be converted to swagger paths
+      endpoint: DtodoaquiWeb.Endpoint  # (optional) endpoint config used to set host, port and https schemes.
+    ]
+  }

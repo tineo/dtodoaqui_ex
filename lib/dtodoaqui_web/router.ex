@@ -12,6 +12,7 @@ defmodule DtodoaquiWeb.Router do
   end
 
   pipeline :api do
+    plug CORSPlug, origin: "*"
     plug :accepts, ["json"]
   end
 
@@ -34,6 +35,7 @@ defmodule DtodoaquiWeb.Router do
     pipe_through :api
 
     resources "/users", UserController#, only: [:create, :show]
+    options   "/users", UserController, :options
     post "/sign_up", UserController, :create
     post "/sign_in", UserController, :sign_in
   end
@@ -42,6 +44,19 @@ defmodule DtodoaquiWeb.Router do
     pipe_through [:api, :jwt_authenticated]
 
     get "/my_user", UserController, :show
+  end
+
+  scope "/api/swagger" do
+    forward "/", PhoenixSwagger.Plug.SwaggerUI, otp_app: :dtodoaqui, swagger_file: "swagger.json"
+  end
+
+  def swagger_info do
+    %{
+      info: %{
+        version: "1.0",
+        title: "Dtodoaqui"
+      }
+    }
   end
 
 end

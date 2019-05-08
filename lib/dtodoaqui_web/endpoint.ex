@@ -13,7 +13,7 @@ defmodule DtodoaquiWeb.Endpoint do
     at: "/",
     from: :dtodoaqui,
     gzip: false,
-    only: ~w(css fonts images js favicon.ico robots.txt)
+    only: ~w(css fonts images js favicon.ico robots.txt .well-known)
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.
@@ -41,6 +41,8 @@ defmodule DtodoaquiWeb.Endpoint do
     store: :cookie,
     key: "_dtodoaqui_key",
     signing_salt: "cpvCUUd1"
-
+    
+  plug CORSPlug
   plug DtodoaquiWeb.Router
+  
 end

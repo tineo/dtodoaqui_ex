@@ -27,6 +27,9 @@ production mode
 
 `MIX_ENV=prod mix phx.server`
 
+
+`MIX_ENV=prod PORT=4001 elixir --detached -S mix do compile, phx.server`
+
 Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
 
 ## Learn more
