@@ -33,7 +33,7 @@ defmodule Dtodoaqui.Accounts.User do
   @doc false
   def changeset(%User{} = user, attrs) do
     user
-    |> cast(attrs, [:email, :password, :password_confirmation]) # Remove hash, add pw + pw confirmation
+    |> cast(attrs, [:username, :email, :password, :password_confirmation]) # Remove hash, add pw + pw confirmation
     |> validate_required([:email, :password, :password_confirmation]) # Remove hash, add pw + pw confirmation
     |> validate_format(:email, ~r/@/) # Check that email is valid
     |> validate_length(:password, min: 8) # Check that password length is >= 8 
